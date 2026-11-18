@@ -1,0 +1,130 @@
+{
+  "selected_model": "RandomForest",
+  "validation_results": [
+    {
+      "model": "LogisticRegression",
+      "validation_accuracy": 0.99,
+      "validation_macro_f1": 0.9041
+    },
+    {
+      "model": "RandomForest",
+      "validation_accuracy": 0.9985,
+      "validation_macro_f1": 0.9232
+    },
+    {
+      "model": "HistGradientBoosting",
+      "validation_accuracy": 0.9951,
+      "validation_macro_f1": 0.8077
+    }
+  ],
+  "selection_rule": "Highest macro F1 on a stratified validation split of KDDTrain+. KDDTest+ was not used for selection.",
+  "test_accuracy": 0.7383,
+  "test_macro_f1": 0.4762,
+  "test_per_class": {
+    "DoS": {
+      "precision": 0.9609,
+      "recall": 0.7617,
+      "f1-score": 0.8498,
+      "support": 7460
+    },
+    "Probe": {
+      "precision": 0.8513,
+      "recall": 0.6055,
+      "f1-score": 0.7077,
+      "support": 2421
+    },
+    "R2L": {
+      "precision": 0.973,
+      "recall": 0.0125,
+      "f1-score": 0.0246,
+      "support": 2885
+    },
+    "U2R": {
+      "precision": 0.5,
+      "recall": 0.0149,
+      "f1-score": 0.029,
+      "support": 67
+    },
+    "normal": {
+      "precision": 0.6362,
+      "recall": 0.9742,
+      "f1-score": 0.7697,
+      "support": 9711
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "DoS",
+      "Probe",
+      "R2L",
+      "U2R",
+      "normal"
+    ],
+    "matrix": [
+      [
+        5682,
+        69,
+        0,
+        0,
+        1709
+      ],
+      [
+        164,
+        1466,
+        0,
+        0,
+        791
+      ],
+      [
+        0,
+        3,
+        36,
+        1,
+        2845
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        65
+      ],
+      [
+        67,
+        184,
+        0,
+        0,
+        9460
+      ]
+    ]
+  },
+  "train_class_distribution": {
+    "normal": 67343,
+    "DoS": 45927,
+    "Probe": 11656,
+    "R2L": 995,
+    "U2R": 52
+  },
+  "test_class_distribution": {
+    "normal": 9711,
+    "DoS": 7460,
+    "R2L": 2885,
+    "Probe": 2421,
+    "U2R": 67
+  },
+  "category_info": {
+    "normal": "Ordinary, legitimate network traffic.",
+    "DoS": "Denial of Service - floods a machine so real users cannot use it (e.g. SYN flood).",
+    "Probe": "Scanning - the attacker maps hosts/ports/services before attacking (e.g. port scan).",
+    "R2L": "Remote to Local - an outside attacker tries to get a user account (e.g. password guessing).",
+    "U2R": "User to Root - a local user tries to gain administrator/root control (e.g. buffer overflow)."
+  },
+  "dataset": {
+    "name": "NSL-KDD",
+    "source": "Canadian Institute for Cybersecurity, University of New Brunswick - https://www.unb.ca/cic/datasets/nsl.html",
+    "train_records": 125973,
+    "test_records": 22544,
+    "features": 41
+  },
+  "training_time_seconds": 18.2
+}
